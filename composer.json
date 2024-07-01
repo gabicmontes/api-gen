@@ -1,0 +1,29 @@
+{
+    "name": "gabicmontes/api-gen",
+    "description": "A Laravel package for generating API-related files.",
+    "type": "library",
+    "keywords": ["laravel", "package", "api", "generator"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabi C. Montes",
+            "email": "gabicmontes@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GabiCMontes\\ApiGen\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GabiCMontes\\ApiGen\\ApiGenServiceProvider"
+            ]
+        }
+    }
+}
