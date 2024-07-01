@@ -13,8 +13,12 @@ class ApiGenServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('command.api-gen', function ($app) {
+            return $app['GabiCMontes\ApiGen\Commands\ApiGen'];
+        });
+
         $this->commands([
-            \GabiCMontes\ApiGen\Commands\ApiGen::class,
+            'command.api-gen',
         ]);
     }
 
