@@ -2,6 +2,7 @@
 
 namespace GabiCMontes\ApiGen\Commands;
 
+use GabiCMontes\ApiGen\Services\ModelService;
 use Illuminate\Console\Command;
 
 class ApiGen extends Command
@@ -35,6 +36,9 @@ class ApiGen extends Command
         $this->fields = array_map(function ($field) {
             return explode(':', $field)[0];
         }, $this->fieldsWithTypes);
+
+        $modelService = new ModelService($this->modelName, $this->fields);
+        $modelService->generate();
     }
 
     private function validFields()
